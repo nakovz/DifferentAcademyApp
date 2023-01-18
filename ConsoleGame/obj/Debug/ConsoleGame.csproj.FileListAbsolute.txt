@@ -1,0 +1,7 @@
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\ConsoleGame.exe.config
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\ConsoleGame.exe
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\ConsoleGame.pdb
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csprojAssemblyReference.cache
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.CoreCompileInputs.cache
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.exe
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.pdb
