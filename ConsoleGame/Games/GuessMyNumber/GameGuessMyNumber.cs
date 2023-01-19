@@ -30,7 +30,7 @@ namespace ConsoleGame {
                     userNumber = userAnswer.IntegerValue;
                     userAttempts++;
                     if (myNumber == userNumber) {
-                        Console.WriteLine($"Bravoooo! You guess my number after { userAttempts } attempts!\n");
+                        Console.WriteLine($"Excellent! You guess my number after { userAttempts } attempts!\n");
                     } else if (myNumber > userNumber) {
                         myMessage = $"My number is greater than { userNumber }";
                     } else {
@@ -60,7 +60,7 @@ namespace ConsoleGame {
                     userNumber = userAnswer.IntegerValue;
                     userAttempts++;
                     if (myNumber == userNumber) {
-                        Console.WriteLine($"Bravoooo! You guess my number after { userAttempts } attempts!\n");
+                        Console.WriteLine($"Excellent! You guess my number after { userAttempts } attempts!\n");
                     } else if (myNumber > userNumber) {
                         myMessage = $"My number is greater than { userNumber }";
                     } else {
