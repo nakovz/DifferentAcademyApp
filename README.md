@@ -1,3 +1,3 @@
-# DifferentAccademyApp
+# DifferentAcademyApp
 
-This is an application builded through Full Stack .Net Accadamy provided by Leonid R.
+This is an application builded through Full Stack .Net Acadamy lectured by Leonid R.
