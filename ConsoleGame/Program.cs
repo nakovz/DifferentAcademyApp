@@ -9,7 +9,7 @@ namespace ConsoleGame {
         static void Main(string[] args) {
             //var myStore = new Store { Name = "Different Accademy" };
             //myStore.WellcomeScreen();
-
+            // Boban salutes you
             //TEst so impementacija na interface
             List<IItemsForSale> menuList = MainMenu.Init();
             MainMenu.MenuWithDetailPage("Different Accademy", "G", menuList.ToArray());
