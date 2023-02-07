@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 namespace ConsoleGame {
     class Program {
         static void Main(string[] args) {
-            //var myStore = new Store { Name = "Different Accademy" };
-            //myStore.WellcomeScreen();
+            var myStore = new Store { Name = "Different Academy" };
+            myStore.WellcomeScreen();
 
-            //TEst so impementacija na interface
-            List<IItemsForSale> menuList = MainMenu.Init();
-            MainMenu.MenuWithDetailPage("Different Accademy", "G", menuList.ToArray());
+            ////exercise with using interfaces
+            //List<IItemsForSale> menuList = MainMenu.Init();
+            //MainMenu.MenuWithDetailPage("Different Academy", "G", menuList.ToArray());
+
+            //This is my one-line comment (: 
         }
     }
 }
