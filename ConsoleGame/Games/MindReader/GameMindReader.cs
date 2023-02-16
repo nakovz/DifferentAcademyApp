@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleGame {
     class GameMindReader : IItemsForSale {
 
+        public int ItemId { get; set; }
         public string Name { get; set; }
         public string Status { get; set; } = "Buy";
         public string Description { get; } = "I will guess Your card in only 3 tries.";
@@ -14,21 +15,7 @@ namespace ConsoleGame {
         public string Currency { get; set; } = "EUR";
         public int Rating { get; set; } = 5;
         public void Execute() {
-            do {
-                var cardDeck = InitPlayingCardDeck();
-                cardDeck = ShufflePlayingCardDeck(cardDeck);
-                Console.Clear();
-                Console.WriteLine("Please choose one card!");
-                for (int i = 0; i < 3; i++) {
-                    Console.WriteLine();
-                    PrintPlayingCardStacks(cardDeck);
-                    int userStack = MyUserInput.NumberOnly("\nPlease tell me in which pile is your card:", true, "", 3).IntegerValue;
-                    cardDeck = ReorderPlayingCardStacks(userStack, cardDeck);
-                }
-                Console.Write($"\nYour card is: ");
-                PrintPlayingCard(cardDeck[7]);
-                Console.WriteLine("\n\nThank You for playing Mind Reader!\n");
-            } while (MyMessages.DoYouWantYesNo("to play again?"));
+            Play();
         }
 
         public static void Play() {

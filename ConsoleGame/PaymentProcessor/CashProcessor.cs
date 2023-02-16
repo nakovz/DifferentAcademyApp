@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame {
     class CashProcessor {
-        internal static bool Paying(Person player, Games game) {
+        internal static bool Paying(MyPerson player, Games game) {
             bool returnValue = false;
             int insertedCoinBalance = 0;
             bool insertCoinAgain = true;
@@ -30,7 +30,7 @@ namespace ConsoleGame {
             return returnValue;
         }
 
-        private static void PaymentAnswer(Person player, bool paymentState, int returnChangeCoin) {
+        private static void PaymentAnswer(MyPerson player, bool paymentState, int returnChangeCoin) {
             Console.Clear();
             Console.WriteLine("Wellcome to Different Academy games store!\n");
             if (paymentState) {
@@ -44,7 +44,7 @@ namespace ConsoleGame {
             }
         }
 
-        private static MyUserInputType InsertCoin(Games game, int insertedCoinBalance, Person player) {
+        private static MyUserInputType InsertCoin(Games game, int insertedCoinBalance, MyPerson player) {
             Console.Clear();
             Console.WriteLine("Wellcome to Different Academy games store!\n");
             Console.WriteLine($"You want to buy * { game.GameName } * game and it will cost You { game.GamePrice } MKD!\n");
@@ -53,7 +53,7 @@ namespace ConsoleGame {
             return MyUserInput.ChooseFromMenu("Please insert a coin\n", "\nSelect an option: ", "x", "-", "10 MKD", "50 MKD", "100 MKD", "500 MKD", "-", "Cancel");
         }
 
-        private static int AddCoin(int coinIndex, Person player) {
+        private static int AddCoin(int coinIndex, MyPerson player) {
             int returnValue = 0;
             int coinValue = 0;
             switch (coinIndex) {

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleGame {
     class SpecialMenuElement : IItemsForSale {
 
+        public int ItemId { get; set; }
         public string Name { get; set; }
         public string Status { get; set; } = "Buy";
         public string Description { get; set; } = "";

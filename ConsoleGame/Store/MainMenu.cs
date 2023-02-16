@@ -85,31 +85,38 @@ namespace ConsoleGame {
         public static List<IItemsForSale> Init() {
             return new List<IItemsForSale> {
                 new GamePyramid {
+                    ItemId=1,
                     Name="Pyramid"
                 },
                 new GameMatrix {
+                    ItemId=2,
                     Name="Matrix"
                 },
                 new GameGuessMyNumber {
+                    ItemId=3,
                     Name="Guess My Number"
                 },
                 new GameHanioTower {
+                    ItemId=4,
                     Name="Hanoi Tower"
                 },
                 new GameMindReader {
+                    ItemId=5,
                     Name="Mind Reader"
                 },
                 new SpecialMenuElement {
+                    ItemId=0,
                     Name="-"
                 },
                 new SpecialMenuElement {
+                    ItemId=0,
                     Name="User Info",
                     Description="Here you will find information about your account.\n\nCredit Balance\nReset a password.\nAnd much more..."
                 }
             };
         }
 
-        public static void ShowMenu(Store store, Person player) {
+        public static void ShowMenu(Store store, MyPerson player) {
             List<Games> listOfGames = Games.InitGames();
 
             bool startOverAgain = true;
@@ -124,7 +131,7 @@ namespace ConsoleGame {
                     if (gameIndex < listOfGames.Count) {
                         BuyOrPlay(player, listOfGames.ElementAt(gameIndex));
                     } else {
-                        if (gameIndex == listOfGames.Count ) {
+                        if (gameIndex == listOfGames.Count) {
                             Console.Clear();
                             player.UserInformationPage(listOfGames);
                         }
@@ -137,7 +144,7 @@ namespace ConsoleGame {
             return menuOptionValue - 1;
         }
 
-        private static MyUserInputType MainMenuAnswer(Store store, Person player, List<Games> games) {
+        private static MyUserInputType MainMenuAnswer(Store store, MyPerson player, List<Games> games) {
             Console.Clear();
             Console.WriteLine($"Wellcome to { store.Name } store!\n\n");
             var optionText = new List<string>();
@@ -154,7 +161,7 @@ namespace ConsoleGame {
             return MyUserInput.ChooseFromMenu($"    { ("list of games").PadRight(28) }action", "\nSelect an option: ", "x", optionText.ToArray());
         }
 
-        private static void BuyOrPlay(Person player, Games game) {
+        private static void BuyOrPlay(MyPerson player, Games game) {
             switch (game.GameStatus) {
                 case "Buy":
                     Store.Buy(player, game);

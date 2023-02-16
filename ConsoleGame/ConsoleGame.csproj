@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,7 +52,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agreement.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmsEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DmsEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmsEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmsEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DmsEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceItem.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyHelpers\MyConsole.cs" />
+    <Compile Include="MyPerson.cs" />
+    <Compile Include="Notice.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Offer.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organization.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PaymentProcessor\CardProcessor.cs" />
     <Compile Include="PaymentProcessor\CashProcessor.cs" />
     <Compile Include="Games\HanoiTower\GameHanioTower.cs" />
@@ -51,8 +97,11 @@
     <Compile Include="Games\HanoiTower\HanoiTowerCursor.cs" />
     <Compile Include="Games\HanoiTower\HanoiTowerState.cs" />
     <Compile Include="MyHelpers\MyUserInputType.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Store\IItemsForSale.cs" />
+    <Compile Include="Store\ItemStatusPerUser.cs" />
     <Compile Include="Store\SpecialMenuElement.cs" />
     <Compile Include="Store\Store.cs" />
     <Compile Include="Games\Games.cs" />
@@ -64,10 +113,35 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Games\Pyramid\GamePyramid.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DmsEntityModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="DmsEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DmsEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DmsEntityModel.edmx.diagram">
+      <DependentUpon>DmsEntityModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DmsEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DmsEntityModel.Context.cs</LastGenOutput>
+      <DependentUpon>DmsEntityModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DmsEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DmsEntityModel.edmx</DependentUpon>
+      <LastGenOutput>DmsEntityModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
