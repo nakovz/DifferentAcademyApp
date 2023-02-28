@@ -38,10 +38,14 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupGenderType = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupAccountType = new System.Windows.Forms.GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupGenderType.SuspendLayout();
+            this.groupAccountType.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -173,45 +177,79 @@
             this.txtPhone.TabIndex = 5;
             this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
             // 
-            // groupBox1
+            // groupGenderType
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(123, 197);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(95, 59);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gender:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Female";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.groupGenderType.Controls.Add(this.radioButton2);
+            this.groupGenderType.Controls.Add(this.radioButton1);
+            this.groupGenderType.Location = new System.Drawing.Point(123, 197);
+            this.groupGenderType.Name = "groupGenderType";
+            this.groupGenderType.Size = new System.Drawing.Size(95, 59);
+            this.groupGenderType.TabIndex = 10;
+            this.groupGenderType.TabStop = false;
+            this.groupGenderType.Text = "Gender:";
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(9, 37);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(48, 17);
+            this.radioButton2.Size = new System.Drawing.Size(66, 17);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Male";
+            this.radioButton2.Text = "Gender2";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(9, 14);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(66, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Gender1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // groupAccountType
+            // 
+            this.groupAccountType.Controls.Add(this.radioButton4);
+            this.groupAccountType.Controls.Add(this.radioButton3);
+            this.groupAccountType.Location = new System.Drawing.Point(14, 197);
+            this.groupAccountType.Name = "groupAccountType";
+            this.groupAccountType.Size = new System.Drawing.Size(97, 59);
+            this.groupAccountType.TabIndex = 11;
+            this.groupAccountType.TabStop = false;
+            this.groupAccountType.Text = "Account Type";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 37);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(73, 17);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "accType2";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 14);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(73, 17);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "accType1";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // frmSignUpNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 263);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupAccountType);
+            this.Controls.Add(this.groupGenderType);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pickerDOB);
             this.Controls.Add(this.btnSignUp);
@@ -230,8 +268,10 @@
             this.Name = "frmSignUpNewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New User";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupGenderType.ResumeLayout(false);
+            this.groupGenderType.PerformLayout();
+            this.groupAccountType.ResumeLayout(false);
+            this.groupAccountType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,8 +294,11 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupGenderType;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox groupAccountType;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }

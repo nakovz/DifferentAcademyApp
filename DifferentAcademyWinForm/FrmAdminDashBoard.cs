@@ -11,12 +11,14 @@ using ConsoleGame;
 
 namespace DifferentAcademyWinForm {
     public partial class FrmAdminDashBoard : Form {
+        public MyPerson LoggedUser { get; set; }
         public FrmAdminDashBoard() {
             InitializeComponent();
         }
 
         public FrmAdminDashBoard(MyPerson user) {
             InitializeComponent();
+            LoggedUser = user;
             lblFullName.Text = user.FirstName.Trim() + " " + user.LastName.Trim();
             lblEmail.Text = user.Email.Trim();
         }
@@ -44,8 +46,9 @@ namespace DifferentAcademyWinForm {
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
             if(e.ColumnIndex == 0) {
                 // Edit User Account
+                
                 var user = DbPerson.GetPersonByEmail(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
-                var editForm = new frmSignUpNewUser(user.ElementAt(0));
+                var editForm = new frmSignUpNewUser(user.ElementAt(0), LoggedUser.AccountType == (int)DbHelper.AccountType.Admin);
                 editForm.ShowDialog();
                 editForm = null;
                 UpdateDataInGridView();

@@ -23,15 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearchClear = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +37,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,33 +97,6 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(599, 83);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(169, 20);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnSearchClear
-            // 
-            this.btnSearchClear.Location = new System.Drawing.Point(763, 81);
-            this.btnSearchClear.Name = "btnSearchClear";
-            this.btnSearchClear.Size = new System.Drawing.Size(22, 23);
-            this.btnSearchClear.TabIndex = 7;
-            this.btnSearchClear.Text = "X";
-            this.btnSearchClear.UseVisualStyleBackColor = true;
-            this.btnSearchClear.Click += new System.EventHandler(this.btnSearchClear_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(549, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Search:";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "id";
@@ -168,10 +141,10 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column7.HeaderText = "";
             this.Column7.Name = "Column7";
@@ -181,15 +154,42 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.OrangeRed;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OrangeRed;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column8.HeaderText = "";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Text = "Delete";
             this.Column8.UseColumnTextForButtonValue = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(599, 83);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(169, 20);
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSearchClear
+            // 
+            this.btnSearchClear.Location = new System.Drawing.Point(763, 81);
+            this.btnSearchClear.Name = "btnSearchClear";
+            this.btnSearchClear.Size = new System.Drawing.Size(22, 23);
+            this.btnSearchClear.TabIndex = 7;
+            this.btnSearchClear.Text = "X";
+            this.btnSearchClear.UseVisualStyleBackColor = true;
+            this.btnSearchClear.Click += new System.EventHandler(this.btnSearchClear_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(549, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Search:";
             // 
             // FrmAdminDashBoard
             // 
@@ -204,6 +204,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblFullName);
             this.Name = "FrmAdminDashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administration Dash Board";
             this.Shown += new System.EventHandler(this.FrmAdminDashBoard_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

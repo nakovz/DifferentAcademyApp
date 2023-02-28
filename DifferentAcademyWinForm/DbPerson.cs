@@ -66,6 +66,7 @@ namespace DifferentAcademyWinForm {
                     command.Parameters.AddWithValue("@dob", person.DateOfBirth);
                     command.Parameters.AddWithValue("@gender", person.Gender);
                     command.Parameters.AddWithValue("@id", person.PersonId);
+                    command.Parameters.AddWithValue("@accType", person.AccountType);
                     var rowsAffected = command.ExecuteNonQuery();
                 }
             }

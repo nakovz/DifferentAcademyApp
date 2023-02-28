@@ -22,14 +22,19 @@ namespace DifferentAcademyWinForm {
             txtEmail.Text = username;
             txtPassword.Text = password;
             PersonForUpdating = new MyPerson();
+            groupAccountType.Visible = false;
+            InitGenderTypeGrouBox(groupGenderType);
+            InitAccountTypeGrouBox(groupAccountType);
+            SelectRadioButtonInGroupBoxByValue(groupAccountType, DbHelper.AccountType.User.ToString());
         }
 
-        public frmSignUpNewUser(MyPerson user) {
+        public frmSignUpNewUser(MyPerson user, Boolean isAdmin) {
             InitializeComponent();
             PersonForUpdating = user;
             this.Text = "Update User information";
             btnSignUp.Text = "Update";
-            txtEmail.Enabled = false;
+
+            txtEmail.ReadOnly = true;
             txtEmail.Text = user.Email;
             txtPassword.Text = user.UserPassword;
             txtConfirmPassword.Text = txtPassword.Text;
@@ -37,31 +42,45 @@ namespace DifferentAcademyWinForm {
             txtLastName.Text = user.LastName;
             txtPhone.Text = user.Phone;
             pickerDOB.Value = new DateTime(Math.Max(pickerDOB.MinDate.Ticks, user.DateOfBirth.Ticks));
-            SelectRadioButtonInGroupBoxByValue(user.Gender);
-            
+
+            InitGenderTypeGrouBox(groupGenderType);
+            SelectRadioButtonInGroupBoxByValue(groupGenderType,user.Gender);
+
+            InitAccountTypeGrouBox(groupAccountType);
+            SelectRadioButtonInGroupBoxByValue(groupAccountType, ((DbHelper.AccountType)user.AccountType).ToString());
+            groupAccountType.Visible = isAdmin;
         }
 
-        private void SelectRadioButtonInGroupBoxByValue(string gender) {
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            if (gender == "Female") {
-                radioButton1.Checked = true;
-            } else if (gender == "Male") {
-                radioButton2.Checked = true;
+        private void InitAccountTypeGrouBox(GroupBox groupBox) {
+            var index = 0;
+            foreach (var radioBtn in groupBox.Controls.OfType<RadioButton>().OrderBy(c => c.TabIndex)) {
+                radioBtn.Text = ((DbHelper.AccountType)index++).ToString();
             }
+        }
+
+        private void InitGenderTypeGrouBox(GroupBox groupBox) {
+            var index = 0;
+            foreach (var radioBtn in groupBox.Controls.OfType<RadioButton>().OrderBy(c => c.TabIndex)) {
+                radioBtn.Text = ((DbHelper.GenderType)index++).ToString();
+            }
+        }
+
+        private void SelectRadioButtonInGroupBoxByValue(GroupBox groupBox, string value) {
+            groupBox.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Text == value).Checked = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e) {
             if (btnSignUp.Text == "Update") {
+                var userType = GetSelectedValueFromGroupBoxOfRadioButtons(groupAccountType);
                 var newUser = new MyPerson {
                     Email = txtEmail.Text.Trim(),
                     FirstName = txtFirstName.Text.Trim(),
                     LastName = txtLastName.Text.Trim(),
                     UserPassword = txtPassword.Text.Trim(),
                     Phone = txtPhone.Text.Trim(),
-                    Gender = GetSelectedValueFromGroupBoxOfRadioButtons(groupBox1),
+                    Gender = GetSelectedValueFromGroupBoxOfRadioButtons(groupGenderType),
                     DateOfBirth = pickerDOB.Value.Date,
-                    AccountType = (int)DbHelper.AccountType.User,
+                    AccountType = (int)Enum.Parse(typeof(DbHelper.AccountType), userType),
                     PersonId = PersonForUpdating.PersonId
                 };
                 DbPerson.UpdateUserInfo(newUser);
@@ -76,10 +95,11 @@ namespace DifferentAcademyWinForm {
                     LastName = txtLastName.Text.Trim(),
                     UserPassword = txtPassword.Text.Trim(),
                     Phone = txtPhone.Text.Trim(),
-                    Gender = GetSelectedValueFromGroupBoxOfRadioButtons(groupBox1),
+                    Gender = GetSelectedValueFromGroupBoxOfRadioButtons(groupGenderType),
                     DateOfBirth = pickerDOB.Value.Date,
-                    AccountType = (int)DbHelper.AccountType.User 
+                    AccountType = (int)DbHelper.AccountType.User
                 };
+                
                 DbPerson.AddNewUser(newUser);
                 MessageBox.Show("Congratulation, your account has been succesfully created!", "SignUp New User", MessageBoxButtons.OK);
                 this.Dispose();
@@ -87,8 +107,8 @@ namespace DifferentAcademyWinForm {
         }
 
         private string GetSelectedValueFromGroupBoxOfRadioButtons(GroupBox groupBox) {
-            var gender = groupBox.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked);
-            return gender == null ? "" : gender.Text;
+            var checkedRadioButton = groupBox.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked);
+            return checkedRadioButton == null ? "" : checkedRadioButton.Text;
         }
         private void txtEmail_KeyDown(object sender, KeyEventArgs e) {
             FormHelper.SelectNextControlOnEnter(this, sender, e);

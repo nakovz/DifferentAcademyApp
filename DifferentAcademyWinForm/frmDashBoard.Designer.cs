@@ -58,6 +58,7 @@
             this.btnManageAccount.TabIndex = 2;
             this.btnManageAccount.Text = "Manage your account";
             this.btnManageAccount.UseVisualStyleBackColor = true;
+            this.btnManageAccount.Click += new System.EventHandler(this.btnManageAccount_Click);
             // 
             // btnLogOut
             // 
@@ -79,6 +80,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblFullName);
             this.Name = "frmDashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Dash Board";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDashBoard_FormClosed);
             this.ResumeLayout(false);

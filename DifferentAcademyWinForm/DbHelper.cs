@@ -16,5 +16,10 @@ namespace DifferentAcademyWinForm {
             User,
             Admin
         }
+
+        public enum GenderType {
+            Female,
+            Male
+        }
     }
 }

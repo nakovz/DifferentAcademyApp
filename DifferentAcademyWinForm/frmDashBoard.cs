@@ -11,12 +11,16 @@ using ConsoleGame;
 
 namespace DifferentAcademyWinForm {
     public partial class frmDashBoard : Form {
+
+        public MyPerson LoggedUser { get; set; }
+
         public frmDashBoard() {
             InitializeComponent();
         }
 
         public frmDashBoard(MyPerson user) {
             InitializeComponent();
+            LoggedUser = user;
             lblFullName.Text = user.FirstName.Trim() + " " + user.LastName.Trim();
             lblEmail.Text = user.Email.Trim();
         }
@@ -27,6 +31,14 @@ namespace DifferentAcademyWinForm {
 
         private void frmDashBoard_FormClosed(object sender, FormClosedEventArgs e) {
             
+        }
+
+        private void btnManageAccount_Click(object sender, EventArgs e) {
+            this.Hide();
+            var frmUpdateInfo = new frmSignUpNewUser(LoggedUser, LoggedUser.AccountType == (int)DbHelper.AccountType.Admin);
+            frmUpdateInfo.ShowDialog();
+            frmUpdateInfo = null;
+            this.Show();
         }
     }
 }
