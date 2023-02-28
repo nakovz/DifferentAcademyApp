@@ -5,3 +5,8 @@ C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csprojA
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.CoreCompileInputs.cache
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.exe
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.pdb
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.dll
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.xml
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.CopyComplete

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame {
     class GameHanioTower : IItemsForSale {
-
+        public int ItemId { get; set; }
         public string Name { get; set; }
         public string Status { get; set; } = "Buy";
         public string Description { get; } = "You need to move entire Hanoi Tower from one place to another!";
@@ -14,39 +14,7 @@ namespace ConsoleGame {
         public string Currency { get; set; } = "EUR";
         public int Rating { get; set; } = 4;
         public void Execute() {
-            do {
-                Console.Clear();
-                var hanoiTowerLevel = WellcomeScreen();
-                Console.WriteLine($"You want to play with { hanoiTowerLevel } disks");
-                var gameState = HanoiTowerState.InitTowerState(hanoiTowerLevel);
-                Console.CursorVisible = false;
-
-                var startTime = DateTime.Now;
-                var isEscapePressed = false;
-                var isHanoiTowerSolved = false;
-                do {
-                    PrintGameInfo(gameState.Moves, hanoiTowerLevel);
-                    isHanoiTowerSolved = HanoiTowerState.PrintState(gameState, hanoiTowerLevel);
-                    if (isHanoiTowerSolved == false) {
-                        var userKeyPress = Console.ReadKey(true).Key;
-                        switch (userKeyPress) {
-                            case ConsoleKey.Escape:
-                                isEscapePressed = true;
-                                break;
-                            case ConsoleKey.S:
-                                HanoiTowerState.Solution(hanoiTowerLevel);
-                                gameState = HanoiTowerState.InitTowerState(hanoiTowerLevel);
-                                break;
-                            default:
-                                gameState = HanoiTowerState.KeyPress(gameState, hanoiTowerLevel, userKeyPress);
-                                break;
-                        }
-                    }
-                } while (isEscapePressed == false && isHanoiTowerSolved == false);
-                Console.CursorVisible = true;
-                var endTime = DateTime.Now;
-                PrintGoodbye(isHanoiTowerSolved, gameState, endTime.Subtract(startTime));
-            } while (MyMessages.DoYouWantYesNo("to play again?"));
+            Play();
         }
 
         public static void Play() {

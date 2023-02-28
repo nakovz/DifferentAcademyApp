@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame {
     class CardProcessor {
-        internal static bool Paying(Person player, Games game) {
+        internal static bool Paying(MyPerson player, Games game) {
             bool returnValue = false;
             bool inputCardInfoAgain = true;
             string textMessage = "";

@@ -8,11 +8,12 @@ namespace ConsoleGame {
     public class Store {
 
         public string Name { get; set; }
-        public List<Person> LogedInUsers { get; set; }
-        public List<Person> SignUpUsers { get; set; }
+        public List<MyPerson> LogedInUsers { get; set; }
+        public List<MyPerson> SignUpUsers { get; set; }
+        public List<ItemStatusPerUser> ItemStatusPerUser { get; set; }
         public Store() {
-            LogedInUsers = new List<Person>();
-            SignUpUsers = new List<Person>();
+            LogedInUsers = new List<MyPerson>();
+            SignUpUsers = new List<MyPerson>();
         }
 
         private string WellcomeMessage() {
@@ -42,12 +43,15 @@ namespace ConsoleGame {
         private void SignUpNewUser() {
             Console.Clear();
             Console.WriteLine(WellcomeMessage());
-            var player = new Person();
+            var player = new MyPerson();
+            player.PersonId = SignUpUsers.Count;
             Console.WriteLine("*** SIGN UP ***\n");
             Console.WriteLine("Please enter your info!\n");
-            Console.Write("Name:");
-            player.Name = Console.ReadLine();
-            player.Email = MyConsole.ReadLineEmail("e-mail:");
+            Console.Write("FirstName:");
+            player.FirstName = Console.ReadLine();
+            do {
+                player.Email = MyConsole.ReadLineEmail("e-mail:");
+            } while (IsUserEmailRegistered(player.Email));
             Console.Write("Date of Birth:");
             player.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
             var userAnswer = MyUserInput.ChooseFromMenu("Gender info", "please enter option:", "x", "-", "Female", "Male", "-", "I don't want to answer!");
@@ -73,8 +77,19 @@ namespace ConsoleGame {
             Console.ReadKey();
         }
 
+        private bool IsUserEmailRegistered(string email) {
+            var returnValue = false;
+            foreach(var player in SignUpUsers) {
+                returnValue = returnValue || (player.Email == email);
+            }
+            if (returnValue) {
+                Console.WriteLine("This e-mail is already registered! Please use another one!");
+            }
+            return returnValue;
+        }
+
         public void EnterLoginCredentials() {
-            var player = new Person();
+            var player = new MyPerson();
             var tryToLogIn = true;
             while (tryToLogIn) {
                 Console.Clear();
@@ -94,16 +109,17 @@ namespace ConsoleGame {
             }
         }
 
-        private Person SignInPlayerOrDefault(Person player, string userPassword) {
+        private MyPerson SignInPlayerOrDefault(MyPerson player, string userPassword) {
             var indexIfUserIsSignIn = SignUpUsers.IndexOf(SignUpUsers.Where(p => p.Email == player.Email).FirstOrDefault());
             if (indexIfUserIsSignIn >= 0) {
                 return SignUpUsers[indexIfUserIsSignIn];
             } else {
                 player.UserPassword = userPassword;
+                player.PersonId = SignUpUsers.Count;
                 return player;
             }
         }
-        private bool IsUserAndPasswordCorrect(Person player, string userPassword) {
+        private bool IsUserAndPasswordCorrect(MyPerson player, string userPassword) {
             var returnValue = true;
             var indexIfUserIsSignIn = SignUpUsers.IndexOf(SignUpUsers.Where(p => p.Email == player.Email).FirstOrDefault());
             if (indexIfUserIsSignIn >= 0) {
@@ -112,7 +128,7 @@ namespace ConsoleGame {
             return returnValue;
         }
 
-        public static void Buy(Person player, Games game) {
+        public static void Buy(MyPerson player, Games game) {
             bool startOverAgain = true;
             while (startOverAgain) {
                 MyUserInputType userAnswer = PaymentMethodAnswer(player, game);
@@ -126,14 +142,14 @@ namespace ConsoleGame {
             }
         }
 
-        private static MyUserInputType PaymentMethodAnswer(Person player, Games game) {
+        private static MyUserInputType PaymentMethodAnswer(MyPerson player, Games game) {
             Console.Clear();
             Console.WriteLine("Wellcome to Different Academy games store!\n");
             Console.Write($"You want to buy * { game.GameName } * game and it will cost You { game.GamePrice } MKD!\n");
             return MyUserInput.ChooseFromMenu("Choose Payment method:\n", "\nSelect an option: ", "b", "-", "Cash", "Payment Card", "-", "Back to Main Menu");
         }
 
-        private static void Payment(Person player, Games game, int paymentMethod) {
+        private static void Payment(MyPerson player, Games game, int paymentMethod) {
             bool isPaymentSuccessful = false;
             switch (paymentMethod) {
                 case 1:
