@@ -10,3 +10,16 @@ C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.Sql
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.xml
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\ConsoleGame.exe.config
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\ConsoleGame.exe
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\ConsoleGame.pdb
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.exe
+C:\Users\Lenovo\source\repos\ZN_github_repos\DifferentAcademyApp\ConsoleGame\obj\Debug\ConsoleGame.pdb
