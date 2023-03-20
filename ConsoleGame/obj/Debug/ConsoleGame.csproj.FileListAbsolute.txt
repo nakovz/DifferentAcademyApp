@@ -10,3 +10,5 @@ C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.Sql
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.xml
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.CopyComplete
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.Migrations.InitialModel.resources
+C:\Users\Zoran\Source\Repos\HomeWork03\ConsoleGame\obj\Debug\ConsoleGame.csproj.GenerateResource.cache

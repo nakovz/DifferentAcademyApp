@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace DifferentAcademyeMarket {
     public class DbHelper {
-        public static  bool isEmailAlreadyRegistered(int storeId, string email) {
+        public static bool isEmailAlreadyRegistered(int storeId, string email) {
             using (var context = new DAeMarketEntities()) {
                 var userWithThisEmail = context.Users.FirstOrDefault(u => u.StoreID == storeId && u.email == email);
                 if (userWithThisEmail == null) {

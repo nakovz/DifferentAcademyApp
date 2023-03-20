@@ -79,6 +79,11 @@
     <Compile Include="InvoiceItem.cs">
       <DependentUpon>DmsEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303161733398_InitialModel.cs" />
+    <Compile Include="Migrations\202303161733398_InitialModel.Designer.cs">
+      <DependentUpon>202303161733398_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyHelpers\MyConsole.cs" />
     <Compile Include="MyPerson.cs" />
     <Compile Include="Notice.cs">
@@ -142,6 +147,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303161733398_InitialModel.resx">
+      <DependentUpon>202303161733398_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
